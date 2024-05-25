@@ -70,6 +70,7 @@ export const items = pgTable(
   "bb_items", {
     id: serial("id").primaryKey(),
     name: text("name"),
+    startingPrice: integer("startingPrice").notNull().default(0),
     userId: text("userId")
       .notNull()
       .references(() => users.id, { onDelete: "cascade" }),
